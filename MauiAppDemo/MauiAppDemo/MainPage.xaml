@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppDemo.MainPage"
+             BindingContext="{Binding MainPageViewModel, Source={StaticResource ServiceLocator}}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Frame BorderColor="Black" Padding="5">
+                <VerticalStackLayout Padding="5">
+                    <Label Text="{Binding Result}"></Label>
+                    <Button Command="{Binding ClickMeCommand}" Text="CLICK ME"></Button>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BorderColor="Green" Padding="5">
+                <VerticalStackLayout Padding="5">
+                    <Entry Text="{Binding Value}"></Entry>
+                    <Button Command="{Binding ReadCommand}" Text="READ KEY" Margin="0,10"></Button>
+                    <Button Command="{Binding WriteCommand}" Text="WRITE KEY"></Button>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
